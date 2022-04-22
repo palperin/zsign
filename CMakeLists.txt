@@ -41,3 +41,6 @@ file(GLOB SRC common/*.cpp ./**.cpp)
 add_executable(zsign ${SRC})
 target_link_libraries(zsign ${LIB_LIST})
 
+add_subdirectory (test)
+
+
