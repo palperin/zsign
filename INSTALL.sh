@@ -15,7 +15,8 @@ CmakeV=3.21.3
 	brew install openssl cmake
     test -d "/opt/homebrew/opt/" &&
         #mkdir -p /usr/local/opt/ && ln -s  /usr/local/opt/openssl@3 /opt/homebrew/opt/openssl@3
-        mkdir -p /usr/local/opt/openssl@3 && sudo cp -an /opt/homebrew/opt/openssl@3 /usr/local/opt/openssl@3
+        echo "Copy openssl directory"
+        mkdir -p /usr/local/opt/ && sudo cp -an /opt/homebrew/opt/openssl@3 /usr/local/opt/openssl@3
 
 # Compile zsign usign cmake
 mkdir build; cd build &&
