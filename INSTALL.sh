@@ -12,7 +12,8 @@ CmakeV=3.21.3
 		
 	# Dependencies 
 	brew install zip unzip &&
-	brew install openssl cmake  
+	brew install openssl cmake  &&
+    mkdir -p /usr/local/opt/ && ln -s  /usr/local/opt/openssl@3 /opt/homebrew/opt/openssl@3
 
 # Compile zsign usign cmake
 mkdir build; cd build &&
