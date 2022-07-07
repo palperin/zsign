@@ -34,8 +34,7 @@ include_directories(${ZLIB_INCLUDE_DIR})
 list(APPEND LIB_LIST ${ZLIB_LIBRARIES})
 
 # Additional lib path from root location
-list(APPEND LIB_LIST ${CMAKE_CURRENT_SOURCE_DIR})
-
+SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_RPATH}:\$ORIGIN/")
 
 # Main sources
 
