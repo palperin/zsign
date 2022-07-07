@@ -16,8 +16,12 @@ if (CMAKE_HOST_SYSTEM_NAME MATCHES "Darwin")
         message(STATUS "Found OpenSSL keg installed by Homebrew at ${BREW_OPENSSL_PREFIX}")
         set(OPENSSL_ROOT_DIR "${BREW_OPENSSL_PREFIX}/")
         set(OPENSSL_INCLUDE_DIR "${BREW_OPENSSL_PREFIX}/include")
-        set(OPENSSL_LIBRARIES "${BREW_OPENSSL_PREFIX}/lib/libssl.dylib;${BREW_OPENSSL_PREFIX}/lib/libcrypto.dylib")
+        # set(OPENSSL_LIBRARIES "${BREW_OPENSSL_PREFIX}/lib/libssl.dylib;${BREW_OPENSSL_PREFIX}/lib/libcrypto.dylib")
     endif()
+
+    message(STATUS "Copy OpenSSL lib files for openssl to /lib inplace")
+    set(OPENSSL_LIBRARIES "${CMAKE_INSTALL_PREFIX}/lib/libssl.dylib;${CMAKE_INSTALL_PREFIX}/lib/libcrypto.dylib")
+
 else()
     find_package(OpenSSL REQUIRED)
 endif()
@@ -32,9 +36,6 @@ message("zlib include dir: ${ZLIB_INCLUDE_DIR}")
 message("zlib libraries: ${ZLIB_LIBRARIES}")
 include_directories(${ZLIB_INCLUDE_DIR})
 list(APPEND LIB_LIST ${ZLIB_LIBRARIES})
-
-# Additional lib path from root location
-SET(CMAKE_INSTALL_RPATH "${CMAKE_INSTALL_RPATH}:\$ORIGIN/")
 
 # Main sources
 
