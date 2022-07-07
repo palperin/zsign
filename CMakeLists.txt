@@ -20,7 +20,7 @@ if (CMAKE_HOST_SYSTEM_NAME MATCHES "Darwin")
     endif()
 
     message(STATUS "Copy OpenSSL lib files for openssl to /lib inplace")
-    set(OPENSSL_LIBRARIES "${CMAKE_INSTALL_PREFIX}/lib/libssl.3.dylib;${CMAKE_INSTALL_PREFIX}/lib/libcrypto.dylib")
+    set(OPENSSL_LIBRARIES "${CMAKE_INSTALL_PREFIX}/lib/libssl.dylib;${CMAKE_INSTALL_PREFIX}/lib/libcrypto.dylib")
 
 else()
     find_package(OpenSSL REQUIRED)
