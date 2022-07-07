@@ -33,6 +33,9 @@ message("zlib libraries: ${ZLIB_LIBRARIES}")
 include_directories(${ZLIB_INCLUDE_DIR})
 list(APPEND LIB_LIST ${ZLIB_LIBRARIES})
 
+# Additional lib path from root location
+list(APPEND LIB_LIST ${CMAKE_CURRENT_SOURCE_DIR})
+
 
 # Main sources
 
