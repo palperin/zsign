@@ -17,15 +17,8 @@ if (CMAKE_HOST_SYSTEM_NAME MATCHES "Darwin")
         set(OPENSSL_ROOT_DIR "${BREW_OPENSSL_PREFIX}/")
         set(OPENSSL_INCLUDE_DIR "${BREW_OPENSSL_PREFIX}/include")
         set(OPENSSL_LIBRARIES "${BREW_OPENSSL_PREFIX}/lib/libssl.dylib;${BREW_OPENSSL_PREFIX}/lib/libcrypto.dylib")
-        #set(OPENSSL_LIBRARIES "${BREW_OPENSSL_PREFIX}/lib/libssl.dylib;${BREW_OPENSSL_PREFIX}/lib/libcrypto.dylib")
     endif()
 
-    # message(STATUS "Copy OpenSSL lib files for openssl to /lib inplace")
-    #set(OPENSSL_LIBRARIES "${CMAKE_INSTALL_PREFIX}/lib/libssl.dylib;${CMAKE_INSTALL_PREFIX}/lib/libcrypto.dylib")
-    # set(OPENSSL_INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/include")
-    # set(OPENSSL_LIBRARIES "${CMAKE_INSTALL_PREFIX}/lib/libssl.dylib;${CMAKE_INSTALL_PREFIX}/lib/libcrypto.dylib")
-    # set @rpaths for libraries to link against
-    
 else()
     find_package(OpenSSL REQUIRED)
 endif()
