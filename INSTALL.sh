@@ -15,11 +15,13 @@ CmakeV=3.21.3
 	brew install openssl cmake
     
     test -d "/usr/local/opt/openssl@3" &&
-        mkdir lib && cp /usr/local/opt/openssl@3/lib/libssl.dylib ./lib/ && cp /usr/local/opt/openssl@3/lib/libcrypto.dylib ./lib/
+        mkdir lib && cp /usr/local/opt/openssl@3/lib/libssl.dylib ./lib/ && cp /usr/local/opt/openssl@3/lib/libcrypto.dylib ./lib/ &&
+        cp /usr/local/opt/openssl@3/lib/libssl.3.dylib ./lib/ && cp /usr/local/opt/openssl@3/lib/libcrypto.3.dylib ./lib/ 
 
     test -d "/opt/homebrew/opt/" &&
         mkdir -p /usr/local/opt/ && sudo cp -rn /opt/homebrew/opt/openssl* /usr/local/opt/ &&
-        mkdir lib && cp /opt/homebrew/opt/openssl@3/lib/libssl.dylib ./lib/ && cp /opt/homebrew/opt/openssl@3/lib/libcrypto.dylib ./lib/
+        mkdir lib && cp /opt/homebrew/opt/openssl@3/lib/libssl.dylib ./lib/ && cp /opt/homebrew/opt/openssl@3/lib/libcrypto.dylib ./lib/ &&
+        cp /opt/homebrew/opt/openssl@3/lib/libssl.3.dylib ./lib/ && cp /opt/homebrew/opt/openssl@3/lib/libcrypto.3.dylib ./lib/ 
 
 # Compile zsign usign cmake
 mkdir build; cd build &&
