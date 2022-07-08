@@ -18,7 +18,7 @@ CmakeV=3.21.3
         mkdir lib && cp /usr/local/opt/openssl@3/lib/libssl.dylib ./lib/ && cp /usr/local/opt/openssl@3/lib/libcrypto.dylib ./lib/
 
     test -d "/opt/homebrew/opt/" &&
-        mkdir -p /usr/local/opt/ && sudo cp -an /opt/homebrew/opt/openssl* /usr/local/opt/ &&
+        mkdir -p /usr/local/opt/ && sudo cp -rn /opt/homebrew/opt/openssl* /usr/local/opt/ &&
         mkdir lib && cp /opt/homebrew/opt/openssl@3/lib/libssl.dylib ./lib/ && cp /opt/homebrew/opt/openssl@3/lib/libcrypto.dylib ./lib/
 
 # Compile zsign usign cmake
