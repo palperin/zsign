@@ -19,6 +19,11 @@ if (CMAKE_HOST_SYSTEM_NAME MATCHES "Darwin")
         set(OPENSSL_LIBRARIES "${BREW_OPENSSL_PREFIX}/lib/libssl.dylib;${BREW_OPENSSL_PREFIX}/lib/libcrypto.dylib")
     endif()
 
+    set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+    set(CMAKE_INSTALL_LIBDIR ${CMAKE_BINARY_DIR}/lib)
+
+    file(MAKE_DIRECTORY ${CMAKE_INSTALL_LIBDIR})
+
 else()
     find_package(OpenSSL REQUIRED)
 endif()
